@@ -3,5 +3,8 @@
 }
 .prompt-label {
     -fx-text-fill: blue;
+}
 
+.main-pane {
+    -fx-border-radius: 10;
 }
