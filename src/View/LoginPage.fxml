@@ -33,7 +33,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="78.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Label prefHeight="44.0" prefWidth="64.0" styleClass="prompt-label" stylesheets="@style.css" text="Username" textFill="RED" />
+                        <Label prefHeight="44.0" prefWidth="64.0" styleClass="prompt-label" stylesheets="@style.css" text=" User ID" textFill="RED" />
                         <TextField prefHeight="26.0" prefWidth="224.0" />
                      </children>
                   </HBox>
