@@ -22,13 +22,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
 
-        //todo 0
         //todo 在窗体刚加载时，就需要读取所有用户的信息了，以便用户输入后比对。
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Login");
         Parent root = FXMLLoader.load(getClass().getResource("../view/LoginPage.fxml"));
 
-        //todo 要干什么
         //todo 在这里读取所有表格
 
         Scene scene = new Scene(root, 800, 600);
