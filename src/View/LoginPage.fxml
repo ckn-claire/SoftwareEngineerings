@@ -58,7 +58,7 @@
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/user.png" />
+                              <Image url="@image/pound.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="idInput" prefHeight="32.0" prefWidth="224.0" promptText="user ID" styleClass="transparent" stylesheets="@style.css" />
@@ -76,7 +76,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="41.0" prefWidth="157.0" text="Login" />
+                        <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="41.0" prefWidth="157.0" style="-fx-background-color: #87c9ff;" styleClass="login-reg-btn-radius" stylesheets="@style.css" text="Login" />
                      </children>
                   </HBox>
                </children>
@@ -93,33 +93,37 @@
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/user.png" />
+                              <Image url="@image/pound.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="idInput1" prefHeight="26.0" prefWidth="224.0" styleClass="transparent" stylesheets="@style.css" />
+                        <TextField fx:id="regUserName" prefHeight="26.0" prefWidth="224.0" promptText="user ID (letters and numbers)" styleClass="transparent" stylesheets="@style.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/user.png" />
+                              <Image url="@image/key.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="idInput2" prefHeight="26.0" prefWidth="224.0" styleClass="transparent" stylesheets="@style.css" />
+                        <TextField fx:id="idInput2" prefHeight="26.0" prefWidth="224.0" promptText="Password (letters and numbers)" styleClass="transparent" stylesheets="@style.css" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="398.0" spacing="10.0">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/user.png" />
+                              <Image url="@image/key.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="idInput3" prefHeight="26.0" prefWidth="224.0" styleClass="transparent" stylesheets="@style.css" />
+                        <TextField fx:id="idInput3" prefHeight="26.0" prefWidth="224.0" promptText="Confirm Password" styleClass="transparent" stylesheets="@style.css" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="loginBtn1" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="41.0" prefWidth="157.0" style="-fx-background-color: #ffffff;" styleClass="login-reg-btn-radius" stylesheets="@style.css" text="Register" />
+                     </children>
+                  </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" />
                </children>
             </VBox>

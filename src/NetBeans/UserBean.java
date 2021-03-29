@@ -9,8 +9,12 @@ package NetBeans;
 */
 public class UserBean {
     private String name;
+
     private String id;
+
+    // Only letters and numbers are permitted.
     private String password;
+
     private String gender;
     private String motto;
     private double height;
