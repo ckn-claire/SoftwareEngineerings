@@ -111,7 +111,13 @@ public class LoginPage {
         //todo 此处检查id，pw是否合法（外部class），不合法则在窗口提示信息，合法则继续
 
         // Instantiate a new user, set the id and pw for it.
-        User user = new User(id, pw);
+        User user;
+
+        if (new ValidChecker().isValidAccount(id, pw)) {
+            //todo 此处getUser（），从hashmap中获得有特定id的用户。该函数打算写在User类中（或未来新建的ObjectGetter类）
+        }
+
+
 
         //todo 此处将此user对象传递给检查存在函数（外部class），看是否存在该用户。不存在则窗口提示，存在则继续
 

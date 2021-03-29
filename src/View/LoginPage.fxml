@@ -96,7 +96,7 @@
                               <Image url="@image/pound.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="regUserName" prefHeight="26.0" prefWidth="224.0" promptText="user ID (letters and numbers)" styleClass="transparent" stylesheets="@style.css" />
+                        <TextField fx:id="regUserName" prefHeight="26.0" prefWidth="224.0" promptText="user ID (letters and numbers 4-15)" styleClass="transparent" stylesheets="@style.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -106,7 +106,7 @@
                               <Image url="@image/key.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="regPw" prefHeight="26.0" prefWidth="224.0" promptText="Password (letters and numbers)" styleClass="transparent" stylesheets="@style.css" />
+                        <TextField fx:id="regPw" prefHeight="26.0" prefWidth="224.0" promptText="Password (letters and numbers 4-15)" styleClass="transparent" stylesheets="@style.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="398.0" spacing="10.0">
