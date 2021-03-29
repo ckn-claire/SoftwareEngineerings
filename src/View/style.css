@@ -1,5 +1,5 @@
 .bg-color {
-    -fx-background-color: #F3F4F6;
+    -fx-background-color: #FFFFFF;
 }
 .prompt-label {
     -fx-text-fill: blue;
@@ -8,3 +8,13 @@
 .main-pane {
     -fx-border-radius: 10;
 }
+.right-column-color{
+    -fx-background-color: #87c9ff;
+}
+.transparent {
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-pref-height: 32;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #898989;
+}
+
