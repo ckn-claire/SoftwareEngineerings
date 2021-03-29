@@ -21,6 +21,10 @@ public class UserBean {
     private double weight;
     private int level;
 
+    //The type of this account, 0 is customer, 1 is coach, 2 is gym manager.
+    private int type;
+
+
     public String getName() {
         return name;
     }
@@ -95,8 +99,7 @@ public class UserBean {
 
 
 
-    //The type of this account, 0 is customer, 1 is coach, 2 is gym manager.
-    private int type;
+
 
     //todo 要一个toString方法，存储到文本文档
     //todo 要parseUser 方法，读取文本文档
