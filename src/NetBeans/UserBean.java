@@ -17,8 +17,7 @@ public class UserBean {
     private double weight;
     private int level;
 
-
-
-
+    //The type of this account, 0 is customer, 1 is coach, 2 is gym manager.
+    private int type;
 
 }

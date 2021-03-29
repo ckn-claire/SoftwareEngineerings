@@ -13,7 +13,12 @@ public class Main extends Application {
     static Stage primaryStage;
 
 
+
+
+
+
     @Override
+
     public void start(Stage primaryStage) throws Exception {
 
 
@@ -22,6 +27,9 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Login");
         Parent root = FXMLLoader.load(getClass().getResource("../view/LoginPage.fxml"));
+
+        //todo 要干什么
+
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
