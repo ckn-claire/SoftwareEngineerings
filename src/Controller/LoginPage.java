@@ -1,16 +1,14 @@
+
 package Controller;
 
-import Controller.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,80 +18,75 @@ public class LoginPage {
     @FXML
     private PasswordField pwInput;
 
+    @FXML
+    private Button loginBtn;
+
+    @FXML
+    private Button loginBtn1;
 
     @FXML
     private TextField idInput;
 
     @FXML
-    private Button register;
+    private TextField regUserName;
 
     @FXML
-
-    private TextField weight;
-
-    @FXML
-    private TextField pwd;
-
+    private TextField idInput3;
 
     @FXML
-    private TextField age;
-
-    @FXML
-    private TextField username;
-
-    @FXML
-    private TextField height;
-    /**
-    * @Description:  实现页面跳转
-    * @Param:
-    * @return:
-    * @Author: CloudKing
-    * @Date: 2021/3/29
-    */
-
-
-    @FXML
-    void registClickbtn(ActionEvent event) throws IOException {
-        Stage stage = (Stage) register.getScene().getWindow();
-        stage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/register.fxml"));
-        Scene scene = new Scene(root, 800, 600);
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
-    }
+    private TextField idInput2;
 
     @FXML
     void onLoginBtnClicked(ActionEvent event) {
-        String id = idInput.getText();
-        String pw = pwInput.getText();
-
-        System.out.println(id);
-        System.out.println(pw);
-        //验证逻辑
-        //跳转到主页
 
 
     }
-    //todo 看看能不能分开成两个java类来实现跳转，一个太冗余了
-    //用来保存信息
+    /**
+    * @Description:  用来储存用户信息
+    * @Param:
+    * @return:
+    * @Author: CloudKing
+    * @Date:
+    */
     @FXML
-    void saveInfo(ActionEvent event) {
-        String password = pwd.getText();
-        String name = username.getText();
-        String Age = age.getText();
+    void onLoginBtn1Clicked(ActionEvent event) throws IOException {
+
+        String username= regUserName.getText();
+        String pwd=idInput2.getText();
+
+        System.out.println(username);
+        System.out.println(pwd);
+        userpagecontrol.go_to_userpage();
 
 
-        String Height=height.getText();
-        String Weight=weight.getText();
 
 
-        System.out.println(password);
-        System.out.println(name);
-        System.out.println(Age);
-        System.out.println(Height);
-        System.out.println(Weight);
-      //todo 将输入的信息保存到txt文件当中
 
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
