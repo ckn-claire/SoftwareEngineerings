@@ -89,5 +89,29 @@ public class LoginPage {
 
     }*/
 
+    @FXML
+    private TextField idInput;
 
+    @FXML
+    private PasswordField pwInput;
+
+    @FXML
+    private Button loginBtn;
+
+    @FXML
+    private TextField regUserName;
+
+    @FXML
+    private TextField regPw;
+
+    @FXML
+    private TextField regPwConfirm;
+
+    @FXML
+    private Button loginBtn1;
+
+    @FXML
+    void onLoginBtnClicked(ActionEvent event) {
+
+    }
 }
