@@ -1,10 +1,31 @@
 package Controller;
 
 
-/**
-* @Description: This class contains all variables and actions of UI elements.
-* @Date: 2021/3/28
-*/
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
 public class LoginPage {
+
+    @FXML
+    private TextField idInput;
+
+    @FXML
+    private PasswordField pwInput;
+
+    @FXML
+    private Button loginBtn;
+
+    @FXML
+    void onLoginBtnClicked(ActionEvent event) {
+        String id = idInput.getText();
+        String pw = pwInput.getText();
+
+        System.out.println(id);
+        System.out.println(pw);
+    }
+
 }
 

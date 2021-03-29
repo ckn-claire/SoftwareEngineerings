@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="main-pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -34,18 +33,18 @@
                   <HBox alignment="CENTER" prefHeight="78.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label prefHeight="44.0" prefWidth="64.0" styleClass="prompt-label" stylesheets="@style.css" text=" User ID" textFill="RED" />
-                        <TextField prefHeight="26.0" prefWidth="224.0" />
+                        <TextField fx:id="idInput" prefHeight="26.0" prefWidth="224.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label prefHeight="44.0" prefWidth="64.0" styleClass="prompt-label" stylesheets="@style.css" text="Password" textFill="RED" />
-                        <PasswordField prefHeight="26.0" prefWidth="224.0" />
+                        <PasswordField fx:id="pwInput" prefHeight="26.0" prefWidth="224.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="157.0" text="Login" />
+                        <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="41.0" prefWidth="157.0" text="Login" />
                      </children>
                   </HBox>
                </children>
