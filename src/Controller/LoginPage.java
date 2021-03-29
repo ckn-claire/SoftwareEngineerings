@@ -1,18 +1,11 @@
 package Controller;
 
-import Controller.Main;
+import NetBeans.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import java.io.IOException;
 
 public class LoginPage {
 /*
@@ -112,6 +105,22 @@ public class LoginPage {
 
     @FXML
     void onLoginBtnClicked(ActionEvent event) {
+        String id = idInput.getText();
+        String pw = pwInput.getText();
+
+        //todo 此处检查id，pw是否合法，不合法则在窗口提示信息，合法则继续
+
+        // Instantiate a new user, set the id and pw for it.
+        User user = new User(id, pw);
+
+        //todo 此处将此user对象传递给检查存在函数，看是否存在该用户。不存在则窗口提示，存在则继续
+
+        //todo 存在该用户，跳转到登陆后页面
+    }
+
+    @FXML
+    void onRegBtnClicked(ActionEvent event) {
 
     }
+
 }

@@ -1,6 +1,6 @@
 package NetBeans;
 
-public class videoBean {
+public class Video {
     String name;
     String userID;
     String length;

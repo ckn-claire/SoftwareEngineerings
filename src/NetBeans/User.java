@@ -7,7 +7,7 @@ package NetBeans;
 * @Author: Thomas Andon
 * @Date: 2021/3/28
 */
-public class UserBean {
+public class User {
     private String name;
 
     private String id;
@@ -23,6 +23,16 @@ public class UserBean {
 
     //The type of this account, 0 is customer, 1 is coach, 2 is gym manager.
     private int type;
+
+
+    public User() {
+
+    }
+
+    public User(String id, String pw) {
+        this.setId(id);
+        this.setPassword(pw);
+    }
 
 
     public String getName() {
