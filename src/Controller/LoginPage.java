@@ -120,7 +120,13 @@ public class LoginPage {
 
     @FXML
     void onRegBtnClicked(ActionEvent event) {
+        String id = regUserName.getText();
+        String pw1 = regPw.getText();
+        String pw2 = regPw.getText();
 
+        //todo 验证id， pw1是否合法（外部class内容，待完成）
+        //todo 检查pw1， pw2是否相同
+        //todo 合法则存储该对象到User中
     }
 
 }
