@@ -29,6 +29,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../view/LoginPage.fxml"));
 
         //todo 要干什么
+        //todo 在这里读取所有表格
 
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setResizable(false);

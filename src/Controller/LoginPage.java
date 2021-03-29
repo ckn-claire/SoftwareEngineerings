@@ -25,6 +25,8 @@ public class LoginPage {
 
         System.out.println(id);
         System.out.println(pw);
+        //验证逻辑
+        //跳转到主页
     }
 
 }
