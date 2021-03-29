@@ -60,7 +60,7 @@ public class LoginPage {
 
 
     }
-    //todo 看看能不能分开成两个java类来实现跳转，一个太冗余了
+
     //用来保存信息
     @FXML
     void saveInfo(ActionEvent event) {
@@ -78,7 +78,7 @@ public class LoginPage {
         System.out.println(Age);
         System.out.println(Height);
         System.out.println(Weight);
-      //todo 将输入的信息保存到txt文件当中
+
 
     }*/
 
@@ -108,14 +108,14 @@ public class LoginPage {
         String id = idInput.getText();
         String pw = pwInput.getText();
 
-        //todo 此处检查id，pw是否合法，不合法则在窗口提示信息，合法则继续
+        //todo 此处检查id，pw是否合法（外部class），不合法则在窗口提示信息，合法则继续
 
         // Instantiate a new user, set the id and pw for it.
         User user = new User(id, pw);
 
-        //todo 此处将此user对象传递给检查存在函数，看是否存在该用户。不存在则窗口提示，存在则继续
+        //todo 此处将此user对象传递给检查存在函数（外部class），看是否存在该用户。不存在则窗口提示，存在则继续
 
-        //todo 存在该用户，跳转到登陆后页面
+        //todo 存在该用户，跳转到登陆后页面，并且将User对象传递给下一个页面的Controller（外部class，进入下一环节）
     }
 
     @FXML
