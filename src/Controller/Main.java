@@ -22,7 +22,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
 
-
+        //todo 0
         //todo 在窗体刚加载时，就需要读取所有用户的信息了，以便用户输入后比对。
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Login");
