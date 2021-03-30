@@ -1,9 +1,6 @@
 package Controller;
 
 
-import NetBeans.User;
-import javafx.scene.control.Alert;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,7 +13,7 @@ public class ValidChecker {
 
 
 
-    public boolean isIDValid(String id) {
+    public boolean isInvalidID(String id) {
         //todo 实现id检查逻辑，只能包括大小写字母和数字，长度在4-15位。
         if(id.length()>=4 && id.length()<=15) {
             String regex = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！ @#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
@@ -32,8 +29,8 @@ public class ValidChecker {
         else { return  true; }
     }
 
-    public boolean isPwValid(String pw) {
-       return isIDValid(pw);
+    public boolean isInvalidPw(String pw) {
+       return isInvalidID(pw);
     }
 
     

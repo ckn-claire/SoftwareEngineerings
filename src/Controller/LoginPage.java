@@ -4,7 +4,6 @@ import NetBeans.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -38,7 +37,7 @@ public class LoginPage {
         ValidChecker Checker = new ValidChecker();
         String id = idInput.getText();
         String pw = pwInput.getText();
-        if (Checker.isIDValid(id)) {
+        if (Checker.isInvalidID(id)) {
             System.out.println("error");
 
             alert.setTitle("Error");
@@ -48,7 +47,7 @@ public class LoginPage {
         }
         else {
 
-            if (Checker.isPwValid(pw)) {
+            if (Checker.isInvalidPw(pw)) {
 
                 alert.setTitle("Error");
                 alert.setHeaderText("Login failed");
@@ -82,36 +81,36 @@ public class LoginPage {
         String pw1 = regPw.getText();
         String pw2 = regPwConfirm.getText();
         //todo 合法则存储该对象到User中
-        if (Checker.isIDValid(id)) {
+        if (Checker.isInvalidID(id)) {
             System.out.println("error");
 
             alert.setTitle("Error");
             alert.setHeaderText("Register failed");
-            alert.setContentText("Failed reason : ID is incorrect");
+            alert.setContentText("Failed reason : ID is invalid");
             alert.show();
         }
 
         else {
-            if (Checker.isPwValid(pw1)) {
+            if (Checker.isInvalidPw(pw1)) {
 
                 alert.setTitle("Error");
                 alert.setHeaderText("Register failed");
-                alert.setContentText("Failed reason : Password1 is incorrect");
+                alert.setContentText("Failed reason : Password1 is invalid");
                 alert.show();
             }
             else {
-                if (Checker.isPwValid(pw2)) {
+                if (Checker.isInvalidPw(pw2)) {
 
                     alert.setTitle("Error");
                     alert.setHeaderText("Register failed");
-                    alert.setContentText("Failed reason : Password2 is incorrect");
+                    alert.setContentText("Failed reason : Password2 is invalid");
                     alert.show();
                 }
                 else {
                     if (!Checker.isSameString(pw1, pw2)) {
                         alert.setTitle("Error");
                         alert.setHeaderText("Register failed");
-                        alert.setContentText("Failed reason : Password1 and Password2 is not same");
+                        alert.setContentText("Failed reason : Password1 and Password2 is different");
                         alert.show();
                     }
                     else {//todo 在这里执行注册成功后的操作
