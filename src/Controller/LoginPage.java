@@ -11,6 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class LoginPage {
 /*
     @FXML
@@ -86,6 +88,8 @@ public class LoginPage {
 
     }*/
 
+
+
     @FXML
     private TextField idInput;
 
@@ -106,6 +110,37 @@ public class LoginPage {
 
     @FXML
     private Button loginBtn1;
+
+
+
+
+    public Stage thisStage;
+
+    public LoginPage() throws IOException {
+        thisStage = new Stage();
+
+
+
+
+
+
+    }
+
+    public void showStage() {
+        thisStage.showAndWait();
+    }
+
+    @FXML
+    private void initialize() {
+
+    }
+
+
+
+
+
+
+
 
     @FXML
     void onLoginBtnClicked(ActionEvent event) {
@@ -137,6 +172,7 @@ public class LoginPage {
         //todo 验证id， pw1是否合法（外部class内容，待完成）
         //todo 检查pw1， pw2是否相同
         //todo 合法则存储该对象到User中
+
 
 
 

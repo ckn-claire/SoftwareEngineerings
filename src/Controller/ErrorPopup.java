@@ -21,23 +21,23 @@ public class ErrorPopup {
     // screen size: 450 300.
 
 
-
-
     @FXML
     private Label prompt;
 
     @FXML
     private Button OKBtn;
 
-    /*public Stage showErrorPopup (String str) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/ErrorPopup.fxml"));
 
-        Stage stage = new Stage(StageStyle.DECORATED);
-        stage.setScene(new Scene(loader.load()));
 
-        ErrorPopup controller = loader.getController();
 
-    }*/
+
+
+
+
+
+
+
+
 
     @FXML
     void onOKBtnClicked(ActionEvent event) {
