@@ -25,15 +25,19 @@ public class LoginPage {
     private PasswordField regPwConfirm;
 
     /**
-    * @Description: Login and register check ,check if the input string is correct.
-    * @Param:
-    * @return:
-    * @Author: CloudKing
-    * @Date: 2021/3/30
-    */
+     * @Description: Login and register check ,check if the input string is correct.
+     * @Param:
+     * @return:
+     * @Author: CloudKing
+     * @Date: 2021/3/30
+     */
     @FXML
     void onLoginBtnClicked(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
+
+
+
         ValidChecker Checker = new ValidChecker();
         String id = idInput.getText();
         String pw = pwInput.getText();
@@ -42,22 +46,23 @@ public class LoginPage {
 
             alert.setTitle("Error");
             alert.setHeaderText("Login failed");
-            alert.setContentText("Failed reason : ID is incorrect");
+            alert.setContentText("Failed reason : ID is invalid");
             alert.show();
-        }
-        else {
+            return;
+        } else {
 
             if (Checker.isInvalidPw(pw)) {
 
                 alert.setTitle("Error");
                 alert.setHeaderText("Login failed");
-                alert.setContentText("Failed reason : Password is incorrect");
+                alert.setContentText("Failed reason : Password is invalid");
                 alert.show();
+                return;
             }
-            else {//todo 在这里执行登陆成功的代码
-                System.out.println("Login success");
-            }
+
         }
+        //todo 此处是格式通过验证
+        System.out.println("OK");
 
         // Instantiate a new user, set the id and pw for it.
         User user;
@@ -88,37 +93,39 @@ public class LoginPage {
             alert.setHeaderText("Register failed");
             alert.setContentText("Failed reason : ID is invalid");
             alert.show();
-        }
-
-        else {
+            return;
+        } else {
             if (Checker.isInvalidPw(pw1)) {
 
                 alert.setTitle("Error");
                 alert.setHeaderText("Register failed");
                 alert.setContentText("Failed reason : Password1 is invalid");
                 alert.show();
-            }
-            else {
+                return;
+            } else {
                 if (Checker.isInvalidPw(pw2)) {
 
                     alert.setTitle("Error");
                     alert.setHeaderText("Register failed");
                     alert.setContentText("Failed reason : Password2 is invalid");
                     alert.show();
-                }
-                else {
+                    return;
+                } else {
                     if (!Checker.isSameString(pw1, pw2)) {
                         alert.setTitle("Error");
                         alert.setHeaderText("Register failed");
                         alert.setContentText("Failed reason : Password1 and Password2 is different");
                         alert.show();
-                    }
-                    else {//todo 在这里执行注册成功后的操作
-                        System.out.println("Register success");
+                        return;
                     }
                 }
             }
         }
+        // end if-else
+        //todo 字符串格式通过
+        System.out.println("OK");
+
+
 
 
     }
