@@ -2,6 +2,10 @@ package Controller;
 
 
 import NetBeans.User;
+import javafx.scene.control.Alert;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @Description: This class contains all methods that checks the validation.
@@ -14,13 +18,33 @@ public class ValidChecker {
 
     public boolean isIDValid(String id) {
         //todo 实现id检查逻辑，只能包括大小写字母和数字，长度在4-15位。
-        return false;
+        if(id.length()>=4 && id.length()<=15) {
+            String regex = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！ @#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher hasSpecial = pattern.matcher(id);
+            if(hasSpecial.find()==false){
+                return hasSpecial.find();
+            }
+            else {
+                return hasSpecial.find();
+            }
+        }
+        else { return  true; }
     }
 
     public boolean isPwValid(String pw) {
-
-        //Password follows the same rules with ID.
-        return isIDValid(pw);
+        if(pw.length()>=4 && pw.length()<=15) {
+            String regex = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！ @#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher hasSpecial = pattern.matcher(pw);
+            if(hasSpecial.find()==false){
+                return hasSpecial.find();
+            }
+            else {
+                return hasSpecial.find();
+            }
+        }
+        else { return  true; }
     }
 
     
