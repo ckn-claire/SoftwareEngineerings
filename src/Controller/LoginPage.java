@@ -6,6 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.*;
+import javafx.stage.Stage;
 
 public class LoginPage {
 /*
@@ -133,6 +137,9 @@ public class LoginPage {
         //todo 验证id， pw1是否合法（外部class内容，待完成）
         //todo 检查pw1， pw2是否相同
         //todo 合法则存储该对象到User中
+
+
+
     }
 
 }
