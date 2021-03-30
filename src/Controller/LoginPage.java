@@ -35,9 +35,10 @@ public class LoginPage {
     @FXML
     void onLoginBtnClicked(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        ValidChecker Checker = new ValidChecker();
         String id = idInput.getText();
         String pw = pwInput.getText();
-        if (new ValidChecker().isIDValid(id)) {
+        if (Checker.isIDValid(id)) {
             System.out.println("error");
 
             alert.setTitle("Error");
@@ -45,13 +46,18 @@ public class LoginPage {
             alert.setContentText("Failed reason : ID is incorrect");
             alert.show();
         }
+        else {
 
-        if (new ValidChecker().isPwValid(pw)) {
+            if (Checker.isPwValid(pw)) {
 
-            alert.setTitle("Error");
-            alert.setHeaderText("Login failed");
-            alert.setContentText("Failed reason : Password is incorrect");
-            alert.show();
+                alert.setTitle("Error");
+                alert.setHeaderText("Login failed");
+                alert.setContentText("Failed reason : Password is incorrect");
+                alert.show();
+            }
+            else {//todo 在这里执行登陆成功的代码
+                System.out.println("Login success");
+            }
         }
 
         // Instantiate a new user, set the id and pw for it.
@@ -75,10 +81,6 @@ public class LoginPage {
         String id = regUserName.getText();
         String pw1 = regPw.getText();
         String pw2 = regPwConfirm.getText();
-
-
-        //todo 验证id， pw1是否合法（外部class内容，待完成）
-        //todo 检查pw1， pw2是否相同
         //todo 合法则存储该对象到User中
         if (Checker.isIDValid(id)) {
             System.out.println("error");
@@ -112,7 +114,7 @@ public class LoginPage {
                         alert.setContentText("Failed reason : Password1 and Password2 is not same");
                         alert.show();
                     }
-                    else {
+                    else {//todo 在这里执行注册成功后的操作
                         System.out.println("Register success");
                     }
                 }
