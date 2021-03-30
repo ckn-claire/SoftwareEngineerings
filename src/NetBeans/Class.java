@@ -1,6 +1,6 @@
 package NetBeans;
 
-public class ClassBean {
+public class Class {
     String name;
     String id;
     String coachID;
