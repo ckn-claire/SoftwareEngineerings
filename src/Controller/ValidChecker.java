@@ -2,6 +2,7 @@ package Controller;
 
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,27 +45,56 @@ public class ValidChecker {
     public boolean isSameString(String s1, String s2) {
         return s1.equals(s2);
     }
+/**
+* @Description: Check if the user input is correct (match to the Userinfo.txt)
+* @Param:  id,pw
+* @return:  True/False
+* @Author: CloudKing
+* @Date: 2021/3/30
+*/
+    public boolean isValidAccount(String id, String pw) throws IOException {
+        String[] s = new String[2];
+        s[0] = id;
+        s[1] = pw;
+        //System.out.println(Arrays.toString(s));
+        FileReader fr = new FileReader("Userinfo.txt");
 
-    public boolean isValidAccount(String s1, String s2) {
-        String line;
-        boolean flag;
-        try {
-
-             FileReader  fr = new FileReader("Userinfo.txt");
-
-             BufferedReader  br = new BufferedReader(fr);
-
-             while (br.readLine()!=null){
-                 line =br.readLine();
-                 //line.substring()
-             }
+        BufferedReader br = new BufferedReader(fr);
 
 
+        for (String line = br.readLine(); line != null; line = br.readLine()) {
+            //System.out.println(line);
+            String l = line;
+            String[] s1 = l.split(";");
+            String[] ID1 = s1[0].split(":");
+            //System.out.println(Arrays.toString(s2));
+            String[] ID2 = ID1[1].split(",");
+            //System.out.println(Arrays.toString(ID2));
 
-        } catch (Exception e) {
+
+            String[] PW1 = s1[1].split(":");
+            String[] PW2 = PW1[1].split(",");
+            //System.out.println(Arrays.toString(PW2));
+
+            String[] li = concat(ID2, PW2);
+
+            if (Arrays.equals(li, s)) {
+                //System.out.println("Login success");
+                return true;
+            } else {
+                break;
+            }
         }
-        return true;//todo 将数据从文件当中逐行读取并储存为数组或者哈希表，根据输入的id和pw进行遍历循环，匹配是否存在
-
+           return false;
     }
+
+
+    public static String[] concat(String[] a, String[] b) {
+        String[] c= new String[a.length+b.length];
+        System.arraycopy(a, 0, c, 0, a.length);
+        System.arraycopy(b, 0, c, a.length, b.length);
+        return c;
+    }
+
 
 }

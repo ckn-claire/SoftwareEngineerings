@@ -34,7 +34,7 @@ public class LoginPage {
      * @Date: 2021/3/30
      */
     @FXML
-    void onLoginBtnClicked(ActionEvent event) {
+    void onLoginBtnClicked(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
 
@@ -66,11 +66,8 @@ public class LoginPage {
         //todo 此处是格式通过验证
         System.out.println("OK");
 
-        // Instantiate a new user, set the id and pw for it.
-        User user;
-
-        if (new ValidChecker().isValidAccount(id, pw)) {
-            //todo 此处getUser（），从hashmap中获得有特定id的用户。该函数打算写在User类中（或未来新建的ObjectGetter类）
+        if(Checker.isValidAccount(id,pw)){
+            System.out.println("Login success");
         }
 
 

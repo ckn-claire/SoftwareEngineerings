@@ -17,7 +17,7 @@ public class IOClass {
 
         FileOutputStream fos = new FileOutputStream(fout,true);
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
-        bw.write("ID: " + id +" "+ "Password" + pw1+"#");
+        bw.write("ID:" + id +";"+ "Password:" + pw1);
         bw.newLine();
         bw.close();//todo 简单的将个人注册信息输入到info 当中放
     }
