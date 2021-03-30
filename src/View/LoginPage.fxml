@@ -76,7 +76,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="41.0" prefWidth="157.0" style="-fx-background-color: #87c9ff;" styleClass="login-reg-btn-radius" stylesheets="@style.css" text="Login" />
+                        <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="41.0" prefWidth="157.0" style="-fx-background-color: #87c9ff;" styleClass="login-reg-btn-radius" stylesheets="@style.css" text="Sign In" />
                      </children>
                   </HBox>
                </children>
@@ -121,7 +121,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#onRegBtnClicked" prefHeight="41.0" prefWidth="157.0" style="-fx-background-color: #ffffff;" styleClass="login-reg-btn-radius" stylesheets="@style.css" text="Register" />
+                        <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#onRegBtnClicked" prefHeight="41.0" prefWidth="157.0" style="-fx-background-color: #ffffff;" styleClass="login-reg-btn-radius" stylesheets="@style.css" text="Sign Up" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" />

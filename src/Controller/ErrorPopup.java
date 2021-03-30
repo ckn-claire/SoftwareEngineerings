@@ -17,7 +17,7 @@ public class ErrorPopup {
 
     @FXML
     void onOKBtnClicked(ActionEvent event) {
-
+        
     }
 
 }
