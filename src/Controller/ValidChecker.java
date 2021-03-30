@@ -22,7 +22,7 @@ public class ValidChecker {
             String regex = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！ @#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
             Pattern pattern = Pattern.compile(regex);
             Matcher hasSpecial = pattern.matcher(id);
-            if(hasSpecial.find()==false){
+            if(!hasSpecial.find()){
                 return hasSpecial.find();
             }
             else {
