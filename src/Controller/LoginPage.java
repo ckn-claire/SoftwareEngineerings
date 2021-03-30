@@ -7,6 +7,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class LoginPage {
     @FXML
     private TextField idInput;
@@ -79,7 +81,7 @@ public class LoginPage {
     }
 
     @FXML
-    void onRegBtnClicked(ActionEvent event) {
+    void onRegBtnClicked(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         ValidChecker Checker = new ValidChecker();
         String id = regUserName.getText();
@@ -124,6 +126,8 @@ public class LoginPage {
         // end if-else
         //todo 字符串格式通过
         System.out.println("OK");
+        IOClass IO=new IOClass();
+        IO.Writer(id,pw1);
 
 
 
