@@ -33,18 +33,7 @@ public class ValidChecker {
     }
 
     public boolean isPwValid(String pw) {
-        if(pw.length()>=4 && pw.length()<=15) {
-            String regex = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！ @#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
-            Pattern pattern = Pattern.compile(regex);
-            Matcher hasSpecial = pattern.matcher(pw);
-            if(hasSpecial.find()==false){
-                return hasSpecial.find();
-            }
-            else {
-                return hasSpecial.find();
-            }
-        }
-        else { return  true; }
+       return isIDValid(pw);
     }
 
     
