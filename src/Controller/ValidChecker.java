@@ -53,7 +53,9 @@ public class ValidChecker {
 * @Date: 2021/3/30
 */
     public boolean isValidAccount(String id, String pw) throws IOException {
-        String[] s = new String[2];
+
+        // todo 这里不需要读写文件，读写文件在IOClass就已经完成了，这里只需要比对id和pw是不是在IOClass返回的列表里就行
+        /*String[] s = new String[2];
         s[0] = id;
         s[1] = pw;
         //System.out.println(Arrays.toString(s));
@@ -85,7 +87,9 @@ public class ValidChecker {
                 break;
             }
         }
-           return false;
+           return false;*/
+        return false;
+
     }
 
 
