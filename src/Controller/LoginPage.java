@@ -25,7 +25,7 @@ public class LoginPage {
     private PasswordField regPwConfirm;
 
     /**
-     * @Description: Login and register check ,check if the input string is correct.
+     * @Description: Login and register check, check if the input string is correct.
      * @Param:
      * @return:
      * @Author: CloudKing
