@@ -37,7 +37,8 @@ public class LoginPage {
     void onLoginBtnClicked(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
-
+        alert.setTitle("Error");
+        alert.setHeaderText("Login failed");
 
 
         ValidChecker Checker = new ValidChecker();
@@ -45,18 +46,12 @@ public class LoginPage {
         String pw = pwInput.getText();
         if (Checker.isInvalidID(id)) {
             System.out.println("error");
-
-            alert.setTitle("Error");
-            alert.setHeaderText("Login failed");
             alert.setContentText("Failed reason : ID is invalid");
             alert.show();
             return;
         } else {
 
             if (Checker.isInvalidPw(pw)) {
-
-                alert.setTitle("Error");
-                alert.setHeaderText("Login failed");
                 alert.setContentText("Failed reason : Password is invalid");
                 alert.show();
                 return;
@@ -80,6 +75,11 @@ public class LoginPage {
     @FXML
     void onRegBtnClicked(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
+        alert.setTitle("Error");
+        alert.setHeaderText("Register failed");
+
+
         ValidChecker Checker = new ValidChecker();
         String id = regUserName.getText();
         String pw1 = regPw.getText();
@@ -87,32 +87,23 @@ public class LoginPage {
         //todo 合法则存储该对象到User中
         if (Checker.isInvalidID(id)) {
             System.out.println("error");
-
-            alert.setTitle("Error");
-            alert.setHeaderText("Register failed");
             alert.setContentText("Failed reason : ID is invalid");
             alert.show();
             return;
         } else {
             if (Checker.isInvalidPw(pw1)) {
 
-                alert.setTitle("Error");
-                alert.setHeaderText("Register failed");
                 alert.setContentText("Failed reason : Password1 is invalid");
                 alert.show();
                 return;
             } else {
                 if (Checker.isInvalidPw(pw2)) {
 
-                    alert.setTitle("Error");
-                    alert.setHeaderText("Register failed");
                     alert.setContentText("Failed reason : Password2 is invalid");
                     alert.show();
                     return;
                 } else {
                     if (!Checker.isSameString(pw1, pw2)) {
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Register failed");
                         alert.setContentText("Failed reason : Password1 and Password2 is different");
                         alert.show();
                         return;
