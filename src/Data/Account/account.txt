@@ -1,2 +1,2 @@
-id:12345 pw:12345 #
-id:173x pw:qwerty #
+12345 12345 #
+173x qwerty #

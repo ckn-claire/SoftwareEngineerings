@@ -34,7 +34,7 @@ public class LoginPage {
      * @Date: 2021/3/30
      */
     @FXML
-    void onLoginBtnClicked(ActionEvent event) throws IOException {
+    void onLoginBtnClicked(ActionEvent event) throws Exception {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
         alert.setTitle("Error");
@@ -64,6 +64,9 @@ public class LoginPage {
         if(Checker.isValidAccount(id,pw)){
             System.out.println("Login success");
         }
+
+
+
 
 
         //todo 此处将此user对象传递给检查存在函数（外部class），看是否存在该用户。不存在则窗口提示，存在则继续
@@ -114,8 +117,6 @@ public class LoginPage {
         // end if-else
         //todo 字符串格式通过
         System.out.println("OK");
-        IOClass IO=new IOClass();
-        IO.Writer(id,pw1);
 
 
 

@@ -21,6 +21,7 @@ public class Main extends Application {
 
     @Override
 
+
     public void start(Stage primaryStage) throws Exception {
 
 
@@ -35,6 +36,9 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        // todo delete-test
+        new IOClass().readAllAccount();
     }
 
 

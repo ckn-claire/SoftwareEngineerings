@@ -1,12 +1,45 @@
 package Controller;
 
+import NetBeans.User;
 
 import java.io.*;
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 public class IOClass {
 
-    public void Writer(String id,String pw1) throws IOException {
-        //todo 这里不需要每次都新建文件，需要检查文件名是否存在，存在则直接打开，然后parse就行。
+    // This is the path where the test files are.
+    String AccountFilePath = "src/Data/Account/account.txt";
+
+    /**
+     * This method reads id and password files and parse them.
+     *
+     * @return An array list with all members ID and passwords.
+     * @throws Exception
+     */
+    public ArrayList readAllAccount() throws Exception {
+        File f = new File(AccountFilePath);
+
+
+        if (!(f.isFile() && f.exists())) {
+            System.out.println("Account file doesn't exist");
+            return null;
+        }
+        InputStreamReader isr = new InputStreamReader(new FileInputStream(f));
+        BufferedReader br = new BufferedReader(isr);
+        String line = null;
+        while ((line = br.readLine()) != null) {
+            // This is where we process each String line
+            System.out.println(line);
+
+        }
+        br.close();
+
+        return null;
+    }
+
+
+    public static void main(String[] args) throws Exception {
+        new IOClass().readAllAccount();
     }
 }

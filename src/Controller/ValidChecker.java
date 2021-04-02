@@ -17,7 +17,7 @@ public class ValidChecker {
     /**
      * @Description: check the input Id and Password
      * @Param:
-     * @return:
+     * @return: boolean
      * @Author: CloudKing
      * @Date: 2021/3/30
      */
@@ -48,7 +48,7 @@ public class ValidChecker {
 /**
 * @Description: Check if the user input is correct (match to the Userinfo.txt)
 * @Param:  id,pw
-* @return:  True/False
+* @return:  boolean
 * @Author: CloudKing
 * @Date: 2021/3/30
 */
@@ -91,7 +91,6 @@ public class ValidChecker {
         return false;
 
     }
-
 
     public static String[] concat(String[] a, String[] b) {
         String[] c= new String[a.length+b.length];
