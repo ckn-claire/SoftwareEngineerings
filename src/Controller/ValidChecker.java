@@ -3,6 +3,7 @@ package Controller;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,51 +46,27 @@ public class ValidChecker {
     public boolean isSameString(String s1, String s2) {
         return s1.equals(s2);
     }
-/**
-* @Description: Check if the user input is correct (match to the Userinfo.txt)
-* @Param:  id,pw
-* @return:  boolean
-* @Author: CloudKing
-* @Date: 2021/3/30
-*/
-    public boolean isValidAccount(String id, String pw) throws IOException {
-
-        // todo 这里不需要读写文件，读写文件在IOClass就已经完成了，这里只需要比对id和pw是不是在IOClass返回的列表里就行
-        /*String[] s = new String[2];
-        s[0] = id;
-        s[1] = pw;
-        //System.out.println(Arrays.toString(s));
-        FileReader fr = new FileReader("Userinfo.txt");
-
-        BufferedReader br = new BufferedReader(fr);
 
 
-        for (String line = br.readLine(); line != null; line = br.readLine()) {
-            //System.out.println(line);
-            String l = line;
-            String[] s1 = l.split(";");
-            String[] ID1 = s1[0].split(":");
-            //System.out.println(Arrays.toString(s2));
-            String[] ID2 = ID1[1].split(",");
-            //System.out.println(Arrays.toString(ID2));
 
 
-            String[] PW1 = s1[1].split(":");
-            String[] PW2 = PW1[1].split(",");
-            //System.out.println(Arrays.toString(PW2));
+    public boolean isValidAccount(String id, String pw) throws Exception {
 
-            String[] li = concat(ID2, PW2);
+        // Instantiate an all-accounts hashmap, it contains all accounts.
+        HashMap accounts = new IOClass().readAllAccount();
 
-            if (Arrays.equals(li, s)) {
-                //System.out.println("Login success");
-                return true;
-            } else {
-                break;
-            }
+
+        // if there is no such ID, then false is returned.
+        if (!accounts.containsKey(id)){
+            return false;
         }
-           return false;*/
-        return false;
 
+        // there is this ID, but the pw is wrong. false is returned.
+        if (!pw.equals(accounts.get(id))) {
+            return false;
+        }
+
+        return true;
     }
 
     public static String[] concat(String[] a, String[] b) {

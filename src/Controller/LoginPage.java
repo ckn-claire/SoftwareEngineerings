@@ -61,10 +61,14 @@ public class LoginPage {
         //todo 此处是格式通过验证
         System.out.println("OK");
 
-        if(Checker.isValidAccount(id,pw)){
-            System.out.println("Login success");
+        // If ID not exists or not matching pw, error occurs.
+        if(!Checker.isValidAccount(id,pw)){
+            alert.setContentText("Failed reason : Wrong id or password");
+            alert.show();
+            return;
         }
 
+        System.out.println("Login success");
 
 
 
@@ -76,7 +80,7 @@ public class LoginPage {
     }
 
     @FXML
-    void onRegBtnClicked(ActionEvent event) throws IOException {
+    void onRegBtnClicked(ActionEvent event) throws Exception {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
         alert.setTitle("Error");
@@ -117,6 +121,12 @@ public class LoginPage {
         // end if-else
         //todo 字符串格式通过
         System.out.println("OK");
+        if(!new IOClass().writeNewUser(id, pw1)) {
+            alert.setContentText("Failed reason : File writing failed");
+            alert.show();
+        }
+
+        //todo 弹出成功窗口，注册成功
 
 
 
