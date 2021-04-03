@@ -1,13 +1,12 @@
 package Controller;
 
-import NetBeans.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
+import javafx.scene.input.MouseEvent;
 
 public class LoginPage {
     @FXML
@@ -25,6 +24,14 @@ public class LoginPage {
 
     @FXML
     private PasswordField regPwConfirm;
+
+    @FXML
+    private Label CALogin;
+
+
+    @FXML
+    private Label adminLogin;
+
 
     /**
      * @Description: Login and register check, check if the input string is correct.
@@ -63,7 +70,7 @@ public class LoginPage {
 
         // If ID not exists or not matching pw, error occurs.
         if(!Checker.isValidAccount(id,pw)){
-            alert.setContentText("Failed reason : Wrong id or password");
+            alert.setContentText("Failed reason : Unidentified user");
             alert.show();
             return;
         }
@@ -122,14 +129,71 @@ public class LoginPage {
         //todo 字符串格式通过
         System.out.println("OK");
         if(!new IOClass().writeNewUser(id, pw1)) {
-            alert.setContentText("Failed reason : File writing failed");
+            alert.setContentText("Failed reason : ID already exists.");
             alert.show();
+            return;
         }
 
         //todo 弹出成功窗口，注册成功
-
-
-
+        Alert affir = new Alert(Alert.AlertType.CONFIRMATION);
+        affir.setTitle("Register Succeeded");
+        affir.setContentText("Done! Your ID is \"" + id+"\"");
+        affir.show();
 
     }
+
+
+
+
+    @FXML
+    /**
+     * This is the function when coach login is pressed
+     */
+    void onCALoginClicked(MouseEvent event) throws Exception {
+        String id = idInput.getText();
+        String pw = pwInput.getText();
+
+        ValidChecker vc = new ValidChecker();
+        IOClass io = new IOClass();
+
+
+        if ((vc.isInvalidID(id)) || vc.isInvalidPw(pw) || !vc.isValidAccount(io.coachAccountFilePath,id,pw)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login error");
+            alert.setHeaderText("Coach Login Error");
+            alert.setContentText("Wrong input. Try again.");
+            alert.show();
+            return;
+
+        }
+
+        // todo 此处是登录成功
+        System.out.println("Coach login OK");
+    }
+
+
+
+    @FXML
+    void onAdminLoginClicked(MouseEvent event) throws Exception {
+        String id = idInput.getText();
+        String pw = pwInput.getText();
+
+        ValidChecker vc = new ValidChecker();
+        IOClass io = new IOClass();
+
+
+        if ((vc.isInvalidID(id)) || vc.isInvalidPw(pw) || !vc.isValidAccount(io.adminAccountFilePath,id,pw)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login error");
+            alert.setHeaderText("Admin Login Error");
+            alert.setContentText("Wrong input. Try again.");
+            alert.show();
+            return;
+
+        }
+
+        // todo 此处是登录成功
+        System.out.println("Admin Login OK");
+    }
+
 }

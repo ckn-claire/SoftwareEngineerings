@@ -1,17 +1,15 @@
 package Controller;
 
-import NetBeans.User;
-
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class IOClass {
 
     // This is the path where the test files are.
-    String AccountFilePath = "src/Data/Account/account.txt";
+    String userAccountFilePath = "src/Data/Account/account.txt";
+    String coachAccountFilePath = "src/Data/Account/CoachAccounts.txt";
+    String adminAccountFilePath = "src/Data/Account/AdminAccounts.txt";
 
     /**
      * This method reads id and password files and parse them.
@@ -22,10 +20,25 @@ public class IOClass {
      */
     public HashMap readAllAccount() throws Exception {
 
+        return getHashMap(userAccountFilePath);
+    }
+
+    public HashMap readAllAccount(String path) throws Exception{
+
+        return getHashMap(path);
+    }
+
+    /**
+     * Encapsulated in readAllAccount() methods, return the Hashmap with dictated files.
+     * @param path
+     * @return
+     * @throws IOException
+     */
+    public HashMap getHashMap(String path) throws IOException {
         HashMap<String, String> account = new HashMap<>();
 
 
-        File f = new File(AccountFilePath);
+        File f = new File(path);
         if (!(f.isFile() && f.exists())) {
             System.out.println("Reading - Account file doesn't exist");
             return null;
@@ -52,16 +65,49 @@ public class IOClass {
      * @param id user id
      * @param pw user password
      * @author Thomas Andon
-     * @return -2 if the file process failed; -1 if ID exists; 1 for success.
+     * @return false if exists, true if OK.
      * @throws IOException
      */
     public boolean writeNewUser(String id, String pw) throws Exception {
-        File f = new File(AccountFilePath);
+/*        File f = new File(accountFilePath);
         if (!(f.isFile() && f.exists())) {
             System.out.println("Writing - Account file doesn't exist, new one created");
         }
 
-        if (new IOClass().checkIDExists(id)) {
+        if (new ValidChecker().checkIDExists(id)) {
+            return false;
+        }
+
+        OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(f,true));
+        BufferedWriter bw = new BufferedWriter(out);
+        out.write(id+" " + pw + " " + "#\n");
+        bw.close();
+        return true;*/
+
+        return writeAccounts(coachAccountFilePath, id, pw);
+
+    }
+
+    public boolean writeNewUser(String path, String id, String pw) throws Exception {
+        return writeAccounts(path, id, pw);
+    }
+
+
+    /**
+     * Encapsulated in writeAccounts() methods.
+     * @param path filepath
+     * @param id coach/admin ID
+     * @param pw coach/admin pw
+     * @return  whether writing succeeded.
+     * @throws Exception
+     */
+    public boolean writeAccounts(String path, String id, String pw) throws Exception {
+        File f = new File(path);
+        if (!(f.isFile() && f.exists())) {
+            System.out.println("Writing - Account file doesn't exist, new one created");
+        }
+
+        if (new ValidChecker().checkIDExists(id)) {
             return false;
         }
 
@@ -74,13 +120,6 @@ public class IOClass {
 
 
 
-    public boolean checkIDExists(String id) throws Exception {
-        HashMap accounts = new IOClass().readAllAccount();
-        if (accounts.containsKey(id)) {
-            return true;
-        }
-        return false;
-    }
 
 
 
