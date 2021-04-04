@@ -1,15 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfileInfo">
    <children>
-      <VBox prefHeight="702.0" prefWidth="128.0">
-         <children>
-            <Label fx:id="userNameHolder" text="Label" />
-         </children>
-      </VBox>
+      <TabPane prefHeight="700.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: #87c9ff; -fx-font-family: &quot;Futura&quot;;" text="Personal Info">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="658.0" prefWidth="1000.0">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="97.0" layoutY="83.0" prefHeight="438.0" prefWidth="291.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="44.0" styleClass="label-holders" stylesheets="@Profile.css" text="ID" />
+                                    <Label fx:id="userNameHolder" styleClass="info-holders" stylesheets="@Profile.css" text="(userID)" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="62.0" styleClass="label-holders" stylesheets="@Profile.css" text="User Name" />
+                                    <Label styleClass="info-holders" stylesheets="@Profile.css" text="(Name)" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Label styleClass="label-holders" stylesheets="@Profile.css" text="Height" />
+                                    <Label styleClass="info-holders" stylesheets="@Profile.css" text="(height)" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Label styleClass="label-holders" stylesheets="@Profile.css" text="Weight" />
+                                    <Label styleClass="info-holders" stylesheets="@Profile.css" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Label text="Gender" />
+                                    <ChoiceBox prefHeight="26.0" prefWidth="74.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Label fx:id="userNameHolder1" layoutX="520.0" layoutY="259.0" prefHeight="43.0" prefWidth="174.0" text="(userID)" />
+                        <Label fx:id="userNameHolder11" layoutX="520.0" layoutY="302.0" prefHeight="43.0" prefWidth="174.0" text="(userID)" />
+                        <Label fx:id="userNameHolder12" layoutX="520.0" layoutY="345.0" prefHeight="43.0" prefWidth="174.0" text="(userID)" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #87c9ff; -fx-font-family: &quot;Futura&quot;;" text="Watch Videos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab style="-fx-background-color: #87c9ff; -fx-font-family: &quot;Futura&quot;;" text="Book Live Session">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

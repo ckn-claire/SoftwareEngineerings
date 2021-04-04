@@ -1,12 +1,17 @@
 package Controller;
 
+import NetBeans.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.*;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class LoginPage {
     @FXML
@@ -24,6 +29,13 @@ public class LoginPage {
 
     @FXML
     private PasswordField regPwConfirm;
+
+    @FXML
+    private Button loginBtn;
+
+    @FXML
+    private Button regBtn;
+
 
     @FXML
     private Label CALogin;
@@ -76,6 +88,26 @@ public class LoginPage {
         }
 
         System.out.println("Login success");
+
+        Stage stage = (Stage) loginBtn.getScene().getWindow();
+        stage.close();
+//        ProfileInfo pi = new ProfileInfo();
+
+
+
+
+        //Below is instantiating the user and passing it to the next window.
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../view/ProfileInfo.fxml"));
+        Parent root = loader.load();
+        ProfileInfo controller = loader.getController();
+
+        //instantiating a user
+        User user = new User(id,pw);
+        controller.initData(user);
+        stage.setTitle("Hello World");
+        stage.setScene(new Scene(root, 1000, 700));
+        stage.show();
 
 
 

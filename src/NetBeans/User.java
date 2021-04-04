@@ -8,18 +8,18 @@ package NetBeans;
 * @Date: 2021/3/28
 */
 public class User {
-    private String name;
+    private String name = "unKnown";
 
     private String id;
 
     // Only letters and numbers are permitted.
     private String password;
 
-    private String gender;
-    private String motto;
-    private double height;
-    private double weight;
-    private int level;
+    private String gender = "unKnown";
+    private String motto = "unKnown";
+    private double height = 0;
+    private double weight = 0;
+    private int level = 0 ;
 
     //The type of this account, 0 is customer, 1 is coach, 2 is gym manager.
     private int type;
