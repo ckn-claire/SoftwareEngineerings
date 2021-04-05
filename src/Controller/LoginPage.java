@@ -104,6 +104,7 @@ public class LoginPage {
 
         //instantiating a user
         User user = new User(id,pw);
+
         controller.initData(user);
         stage.setTitle("Hello World");
         stage.setScene(new Scene(root, 1000, 700));
