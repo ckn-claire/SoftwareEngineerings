@@ -1,5 +1,7 @@
 package Controller;
 
+import NetBeans.User;
+
 import java.io.*;
 import java.util.HashMap;
 
@@ -10,6 +12,7 @@ public class IOClass {
     String userAccountFilePath = "src/Data/Account/account.txt";
     String coachAccountFilePath = "src/Data/Account/CoachAccounts.txt";
     String adminAccountFilePath = "src/Data/Account/AdminAccounts.txt";
+    String profileInfoFolderPath = "src/Data/ProfileInfo/";
 
     /**
      * This method reads id and password files and parse them.
@@ -31,7 +34,7 @@ public class IOClass {
     /**
      * Encapsulated in readAllAccount() methods, return the Hashmap with dictated files.
      * @param path
-     * @return
+     * @return A HashMap with all user accounts and corresponding passwords.
      * @throws IOException
      */
     public HashMap getHashMap(String path) throws IOException {
@@ -84,7 +87,7 @@ public class IOClass {
         bw.close();
         return true;*/
 
-        return writeAccounts(coachAccountFilePath, id, pw);
+        return writeAccounts(userAccountFilePath, id, pw);
 
     }
 
@@ -113,7 +116,85 @@ public class IOClass {
 
         OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(f,true));
         BufferedWriter bw = new BufferedWriter(out);
-        out.write(id+" " + pw + " " + "#\n");
+        bw.write(id+" " + pw + " " + "#\n");
+        bw.close();
+        return true;
+    }
+
+
+    /**
+     * This method takes in a user, set up his personal information and return the same user back.
+     * @param user this is the user known only the ID and password.
+     * @return return the user with his/her full information.
+     * @author Thomas Andon
+     */
+    public User setUserProfile(User user) throws IOException {
+
+        File f = new File(profileInfoFolderPath + user.getId() + ".txt");
+
+        if (!(f.isFile() && f.exists())) {
+            System.out.println(user.getId() + "profile txt does not exist.");
+            return null;
+        }
+
+        InputStreamReader isr = new InputStreamReader(new FileInputStream(f));
+        BufferedReader in = new BufferedReader(isr);
+
+        String line = in.readLine();
+        String[] info = parseProfileString(line);
+        user.setGender(info[1]);
+        user.setHeight(Double.parseDouble(info[2]));
+        user.setWeight(Double.parseDouble(info[3]));
+        user.setLevel(Integer.parseInt(info[4]));
+        user.setName(info[5]);
+
+
+        return user;
+    }
+
+
+    /**
+     * This method parses the in-coming String and returns a string array.
+     * @param info
+     * @return
+     */
+    public String[] parseProfileString(String info) {
+
+        String[] res = info.split("#");
+
+        for(int i = 0;i<res.length;i++){
+            System.out.println(res[i]);
+        }
+        return res;
+    }
+
+
+
+
+    public boolean writeUserProfile(User user) throws IOException {
+        String info = "#" + user.getId() + "#" + user.getGender() + "#" + user.getHeight()
+            + "#" + user.getWeight() + "#" + user.getLevel() +"#" + user.getName();
+
+        File f = new File(profileInfoFolderPath+user.getId()+".txt");
+
+        if (!(f.isFile() && f.exists())) {
+            System.out.println("Writing - user profile doesn't exist, new one created-"+user.getId());
+            try {
+                f.createNewFile();
+
+            } catch(Exception e) {
+                System.out.println("Error occurs when creating files. (path not exists)");
+                return false;
+            }
+
+
+            //todo 不存在的文件会抛异常
+        }
+
+        OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(f));
+        BufferedWriter bw = new BufferedWriter(out);
+
+        bw.write(info);
         bw.close();
         return true;
     }
@@ -124,8 +205,12 @@ public class IOClass {
 
 
 
-
     public static void main(String[] args) throws Exception {
-        new IOClass().readAllAccount();
+        User a = new User();
+        a.setId("123454321");
+        a.setGender("male");
+        System.out.println(new IOClass().writeUserProfile(a));;
+        System.out.println("-------------");
+        new IOClass().parseProfileString("#123454321#male#0.0#0.0#0");
     }
 }

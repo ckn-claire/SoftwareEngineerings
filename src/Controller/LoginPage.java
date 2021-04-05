@@ -130,7 +130,6 @@ public class LoginPage {
         String id = regUserName.getText();
         String pw1 = regPw.getText();
         String pw2 = regPwConfirm.getText();
-        //todo 合法则存储该对象到User中
         if (Checker.isInvalidID(id)) {
             System.out.println("error");
             alert.setContentText("Failed reason : ID is invalid");

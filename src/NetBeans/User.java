@@ -8,7 +8,7 @@ package NetBeans;
 * @Date: 2021/3/28
 */
 public class User {
-    private String name = "unKnown";
+
 
     private String id;
 
@@ -16,13 +16,14 @@ public class User {
     private String password;
 
     private String gender = "unKnown";
-    private String motto = "unKnown";
+
     private double height = 0;
     private double weight = 0;
     private int level = 0 ;
+    private String name = "unKnown";
 
     //The type of this account, 0 is customer, 1 is coach, 2 is gym manager.
-    private int type;
+    private int type = 0;
 
 
     public User() {
@@ -65,14 +66,6 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public String getMotto() {
-        return motto;
-    }
-
-    public void setMotto(String motto) {
-        this.motto = motto;
     }
 
     public double getHeight() {

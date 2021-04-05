@@ -4,7 +4,9 @@
 }
 .info-holders {
     -fx-pref-width: 170;
-    -fx-pref-height: 30;
+    -fx-pref-height: 32;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #898989;
 }
 .label-holders {
     -fx-pref-width: 70;
@@ -16,4 +18,15 @@
 @font-face {
     -fx-font-family: futuraHeavyOblique;
     -fx-font-family-src: url("font/futura.otf");
+}
+
+.saveButton {
+    -fx-pref-height: 41;
+    -fx-pref-width: 157;
+    -fx-background-radius: 25;
+    -fx-background-color: #87c9ff;
+}
+
+. anch{
+    -fx-background-color: #ffffff;
 }
